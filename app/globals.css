@@ -1,21 +1,21 @@
-@import "tailwindcss/preflight"; /* ye replace karega @tailwind base ko */
-@import "tailwindcss/utilities"; /* ye replace karega @tailwind components + utilities ko */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-@import "tailwindcss";
-@layer base {
-  body {
-    @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
-  }
-}
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-lg font-semibold transition-all;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }
